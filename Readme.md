@@ -19,12 +19,31 @@ Preencha os nomes dos integrantes do grupo acima.
 - **Salvar o desenho**: Guarde sua obra de arte no seu dispositivo.
 - **Limpar a tela**: Comece um novo desenho com uma tela limpa.
 
-## Concorrência com Semaforos e Threads
+## Visão Geral do Código
 
-O aplicativo implementa semáforos para controlar o acesso à área de desenho e à função de salvamento de imagens. Isso previne condições de corrida e garante que as operações não interfiram umas nas outras. As threads permitem que o desenho e o salvamento ocorram simultaneamente sem bloquear a interface do usuário.
+O aplicativo de pintura foi desenvolvido em Python, uma linguagem de programação de alto nível conhecida por sua legibilidade e simplicidade. Utilizamos a biblioteca Tkinter para criar a interface gráfica do usuário (GUI), permitindo interações intuitivas com o aplicativo.
 
-- **Semaforos**: Utilizados para sincronizar o acesso a recursos compartilhados.
-- **Threads**: Criam múltiplas linhas de execução para operações concorrentes.
+### Estrutura do Projeto
+
+O projeto é estruturado da seguinte maneira:
+
+- `main.py`: Contém a lógica principal do aplicativo, incluindo a inicialização da janela principal, configuração dos pincéis e gerenciamento de eventos.
+- `icons/`: Um diretório que armazena ícones usados na interface do usuário, como ícones de pincel e botões de ação.
+
+### Bibliotecas Utilizadas
+
+- **Tkinter**: Uma biblioteca padrão do Python para desenvolvimento de interfaces gráficas. É usada para criar todos os elementos visuais do aplicativo, como botões, menus e a área de desenho.
+- **colorchooser**: Um módulo do Tkinter que fornece uma caixa de diálogo para escolher cores.
+- **PIL (Pillow)**: Especificamente, o módulo `ImageGrab` é usado para capturar a área de desenho e salvá-la como um arquivo de imagem.
+- **threading**: Este módulo é utilizado para criar threads que permitem a execução concorrente de tarefas, como desenhar e salvar imagens simultaneamente.
+- **time**: Utilizado para gerenciar pequenas pausas na execução das threads para simular trabalho intensivo e evitar condições de corrida.
+
+### Concorrência
+
+Para garantir que a interface do usuário permaneça responsiva e que as operações de desenho e salvamento sejam realizadas corretamente, utilizamos threads e semáforos:
+
+- **Threads**: Permitem que múltiplas operações sejam executadas em paralelo. Por exemplo, enquanto uma imagem está sendo salva, o usuário ainda pode desenhar na tela.
+- **Semaforos**: São mecanismos de sincronização que controlam o acesso a recursos compartilhados. No nosso caso, eles previnem que múltiplas threads executem operações conflitantes ao mesmo tempo.
 
 ## Como Usar
 
