@@ -9,8 +9,6 @@ Este aplicativo de pintura é um projeto desenvolvido para a disciplina de Siste
 - Paulo Eduardo Teixeira Barbosa
 - João Victor Albernaz
 
-Preencha os nomes dos integrantes do grupo acima.
-
 ## Funcionalidades
 
 - **Diferentes cores de pincel**: Escolha entre uma variedade de cores para desenhar.
